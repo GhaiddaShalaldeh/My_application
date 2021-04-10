@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecordSymptoms"
+    android:orientation="vertical"
+    android:background="@color/black"
+    android:padding="15dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the symptoms you feel"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        />
+
+    <CheckBox
+        android:id="@+id/ch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fever"
+        android:textColor="@color/white"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch2"
+        android:text="Fatigue"
+        android:textColor="@color/white"
+
+
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch3"
+        android:text="Dry cough"
+        android:textColor="@color/white"
+
+
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch4"
+        android:text="Loss of appetite"
+        android:textColor="@color/white"
+
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch5"
+        android:text="Body aches"
+        android:textColor="@color/white"
+
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch6"
+        android:text="Shortnees Of Breath"
+        android:textColor="@color/white"
+
+        />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ch7"
+        android:text="Mucus or phlegm"
+        android:textColor="@color/white"
+
+        />
+
+<!--    <CheckBox-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/ch8"-->
+<!--        android:text="Difficulty breathing or shortness of breath"-->
+<!--        android:textColor="@color/white"-->
+
+<!--        />-->
+<!--    <Button-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="You have chosen these symptoms"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:id="@+id/print"-->
+
+<!--        />-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/printtext"
+        android:layout_gravity="center_horizontal"
+
+        android:textColor="@color/white"
+android:padding="20dp"
+        />
+
+    <Button
+        android:id="@+id/Calculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="The possibility of injury"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/Calculatetext"
+        android:layout_gravity="center_horizontal"
+
+        android:textColor="@color/white"
+
+        />
+    <Button
+        android:id="@+id/Quarantine_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="page Quarantine days"
+
+        />
+
+</LinearLayout>
