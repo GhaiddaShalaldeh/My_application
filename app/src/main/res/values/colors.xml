@@ -18,5 +18,27 @@
     <color name="dark_blue">#23203a</color>
     <color name="darkpink">#fe105d</color>
     <color name="purple">#7C4dff</color>
+ <color name="mapboxWhite">#ffffff</color>
+    <color name="mapboxBlue">#4264fb</color>
+    <color name="mapboxGrayLight">#c6d2e1</color>
+    <color name="mapboxPink">#ee4e8b</color>
+    <color name="mapboxYellow">#d9d838</color>
+    <color name="mapboxRed">#b43b71</color>
+
+    <color name="lightWhite">#f5f5f5</color>
+
+    <!-- Dashboard Colors -->
+
+    <!-- Body and bakground Colors -->
+    <color name="home_bakground">#f2f5f8</color>
+    <color name="banner_bacground">#F1E9CE</color>
+    <color name="banner_background_light">#56F1E9CE</color>
+
+    <!-- Card Colors-->
+    <color name="cad1">#d4cbe5</color>
+    <color name="cad2">#7adccf</color>
+    <color name="cad3">#f7c59f</color>
+    <color name="cad4">#b8d7f5</color>
+    <color name="colorbule" />
 
 </resources>

@@ -8,14 +8,36 @@
     android:orientation="vertical"
     android:background="@color/black"
     android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter your current city "
+        android:layout_gravity="center_horizontal"
+
+        android:textColor="@color/white"
+        />
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="24dp"
+        android:layout_gravity="center_horizontal"
+        android:hint="Enter your current city"
+        android:textColor="@color/black"
+        android:background="@color/white"
+
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Please enter the symptoms you feel"
         android:layout_gravity="center_horizontal"
+
         android:textColor="@color/white"
         />
-
     <CheckBox
         android:id="@+id/ch1"
         android:layout_width="wrap_content"
@@ -92,36 +114,66 @@
 <!--        android:id="@+id/print"-->
 
 <!--        />-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/printtext"
-        android:layout_gravity="center_horizontal"
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text=""-->
+<!--        android:id="@+id/printtext"-->
+<!--        android:layout_gravity="center_horizontal"-->
 
-        android:textColor="@color/white"
-android:padding="20dp"
-        />
+<!--        android:textColor="@color/white"-->
+<!--android:padding="20dp"-->
+<!--        />-->
 
     <Button
         android:id="@+id/Calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="The possibility of injury"
+        android:text="The possibility of infection"
 
         />
-
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edittext2"
         android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/Calculatetext"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="24dp"
         android:layout_gravity="center_horizontal"
-
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:hint="percentage"
+        android:background="@color/white"
 
         />
+
+    <EditText
+        android:id="@+id/edittext1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="24dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:hint="Status"
+        android:background="@color/white"
+
+        />
+    <EditText
+        android:id="@+id/edittext3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="24dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:hint="Sign"
+        android:background="@color/white"
+
+        />
+
     <Button
         android:id="@+id/Quarantine_days"
         android:layout_width="wrap_content"
@@ -130,5 +182,13 @@ android:padding="20dp"
         android:text="page Quarantine days"
 
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btninsert"
+        android:text="INSERT DATA"
+        android:layout_gravity="center_horizontal"
+
+       android:onClick="insert" />
 
 </LinearLayout>

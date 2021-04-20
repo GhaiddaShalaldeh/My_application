@@ -1,26 +1,46 @@
 package com.example.project;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.VoiceInteractor;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecordSymptoms extends AppCompatActivity {
     private CheckBox checkBox1,checkBox2,checkBox3,checkBox4,checkBox5,checkBox7;
     //private CheckBox checkBox8;
-  private CheckBox checkBox6;
+    EditText edittext;
+    EditText edittext1;
+    EditText edittext2;
+    EditText edittext3;
+
+
+    private CheckBox checkBox6;
 
 private Button print;
-private TextView text;
+//private TextView text;
 ArrayList<String> result;
 Button cal;
-TextView printCalculate;
 Button page_Quarantine_days;
 
 
@@ -50,11 +70,16 @@ Button page_Quarantine_days;
         page_Quarantine_days=findViewById(R.id.Quarantine_days);
 
         //print=findViewById(R.id.print);
-        text=findViewById(R.id.printtext);
+        //text=findViewById(R.id.printtext);
         result=new ArrayList<>();
-        text.setEnabled(false);
+       // text.setEnabled(false);
         cal=findViewById(R.id.Calculate);
-        printCalculate=findViewById(R.id.Calculatetext);
+
+        edittext =(EditText)findViewById(R.id.edittext);
+        edittext1=(EditText)findViewById(R.id.edittext1);
+        edittext2=(EditText)findViewById(R.id.edittext2);
+        edittext3=(EditText)findViewById(R.id.edittext3);
+
 
         checkBox1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,16 +184,34 @@ checkBox7.setOnClickListener(new View.OnClickListener() {
 //        text.setEnabled(false);
 //    }
 //});
-    cal.setOnClickListener(new View.OnClickListener() {
+
+
+      // String res=String.valueOf(calculte);
+
+        String sign1="green";
+        String sign2="red";
+        String Status="Positive";
+        String Status1="Negative";
+        cal.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            String city=edittext.getText().toString();
 
-           printCalculate.setText(String.valueOf(calculte)+"%");
-            printCalculate.setEnabled(false);
-            if (calculte >=50)
-                printCalculate.setText(String.valueOf(calculte)+"%" +"\n"+"Positive"+","+" Sign Red"+"\n"+"Please go to page Quarantine days ");
+           edittext1.setText(String.valueOf(calculte)+"%");
+           edittext1.setEnabled(false);
+            if (calculte >=50){
+                edittext2.setText(String.valueOf(calculte)+"%"+"\n");
+                edittext1.setText(Status);
+                edittext3.setText(sign2);
+           // printCalculate.setText("Please go to page Quarantine days" );
+            }
 else
-                printCalculate.setText(String.valueOf(calculte)+"%"+"\n"+" Negative"+","+" Sign Green");
+            {
+                edittext2.setText(String.valueOf(calculte)+"%"+"\n");
+                edittext1.setText(Status1);
+                edittext3.setText(sign1);
+            }
+
 
 
         }
@@ -188,4 +231,38 @@ else
         startActivity(intent);
     }
 
+    public void insert(View view) {
+        String url = "http://192.168.1.105/simple/myfile.php";
+        RequestQueue myrequest = Volley.newRequestQueue(this);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+            }
+
+
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage().toString(), Toast.LENGTH_LONG).show();
+
+                    }
+                })
+
+        {
+        @Override
+        protected Map<String, String> getParams () throws AuthFailureError {
+            Map<String, String> map = new HashMap<>();
+            map.put("Status", edittext1.getText().toString());
+            map.put("Sign", edittext3.getText().toString());
+            map.put("City", edittext.getText().toString());
+            return map;
+        }
+
+    };
+myrequest.add(stringRequest);
+
+
+    }
 }

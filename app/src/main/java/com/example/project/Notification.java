@@ -23,8 +23,8 @@ notification.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 Calendar calendar=Calendar.getInstance();
-calendar.set(Calendar.HOUR_OF_DAY,8);
-calendar.set(Calendar.MINUTE,3);
+calendar.set(Calendar.HOUR_OF_DAY,4);
+calendar.set(Calendar.MINUTE,48);
 calendar.set(Calendar.SECOND,0);
 Intent intent=new Intent (getApplicationContext(),Notification_reciever.class);
    PendingIntent pendingIntent=PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);

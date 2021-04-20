@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 public class therdActivity extends AppCompatActivity implements View.OnClickListener {
 Button backBtn;
 private CardView News,Information,RecordSymptoms,Notification,GPs,Help;
@@ -56,10 +57,10 @@ switch ((v.getId())){
     case R.id.symptoms:i=new Intent(this,RecordSymptoms.class);startActivity(i);
 
         break;
-    case R.id.notification:i=new Intent(this,Notification.class);startActivity(i);
+    case R.id.notification:i=new Intent(this, Notification.class);startActivity(i);
 
         break;
-    case R.id.gps:i=new Intent(this,GPS.class);startActivity(i);
+    case R.id.gps:i=new Intent(this,MapActivity.class);startActivity(i);
 
         break;
     case R.id.help:i=new Intent(this,Help.class);startActivity(i);

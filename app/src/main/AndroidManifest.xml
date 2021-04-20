@@ -3,8 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.project">
 
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission
         android:name="android.permission.CALL_PRIVILEGED"
@@ -17,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
+        android:networkSecurityConfig="@xml/network_security_config"
         <activity android:name=".Quarantinedays"></activity>
         <activity android:name=".Help" />
         <activity android:name=".GPS" />
